@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 20s infinite linear;
+}
+
+.face {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background-color: rgb(27, 214, 243 , 0.2);
+  box-sizing: border-box;
+  border: 2px solid red;
+}
+
+.front {
+  transform:  translatez(100px);
+}
+.back {
+  transform: rotatey(180deg) translatez(100px);
+}
+.left {
+  transform: rotatey(-90deg) translatez(100px);
+}
+.right {
+  transform: rotatey(90deg) translatez(100px);
+}
+.top {
+  transform: rotatex(90deg) translatez(100px);
+}
+.bottom {
+  transform: rotatex(-90deg) translatez(100px);
+}
+
+
+@keyframes spin {
+from {  transform: rotatex(0deg) rotatey(0deg);}
+
+to { transform: rotatex(360deg)  rotatey(360deg);}
+
+}
